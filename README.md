@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Homework 8.01: MongoDB, RabbitMQ, and Redis
 
 ## Introduction
@@ -80,3 +81,6 @@ In the search script, you can use shortened commands for user convenience:
 To enable caching of search results using Redis, uncomment the relevant sections in the search script (`search_quotes.py`). Ensure that Redis is running before executing the script.
 
 ...
+=======
+
+>>>>>>> HWW8/master
