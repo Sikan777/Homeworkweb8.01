@@ -39,33 +39,69 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. **Start MongoDB and RabbitMQ services.**
+1. **Start MongoDB and Redis services.**
 
-2. **Run the data loading scripts for MongoDB:**
-
-    ```bash
-    python load_mongo.py
-    ```
-
-3. **Run the search script for MongoDB:**
+2. **Run the application:**
 
     ```bash
-    python search_quotes.py
+    python main.py
     ```
 
-4. **Run the producer script for RabbitMQ:**
+3. **Enter search commands:**
+
+   - To search by author name: `name:author_name`
+   - To search by tags: `tags:tag1,tag2`
+   - To search by a single tag: `tag:tag_name`
+   
+   Type `exit` to quit the application.
+
+## Functions
+
+### find_by_tag
+
+- **Input:** `tag: str`
+- **Output:** `List[str | None]`
+- Finds quotes based on a single tag.
+
+### find_by_tags
+
+- **Input:** `tags: str`
+- **Output:** `List[str | None]`
+- Finds quotes based on multiple tags.
+
+### find_by_author
+
+- **Input:** `author: str`
+- **Output:** `List[List[Any]]`
+- Finds quotes by a specific author.
+
+### search_quotes
+
+- **Input:** `command: str`
+- **Output:** Displays search results.
+- Accepts user input commands and performs the corresponding search.
+
+## How to Run
+
+1. **Start MongoDB:**
 
     ```bash
-    python producer.py
+    # Example command, adjust as needed
+    mongod --dbpath /path/to/data/directory
     ```
 
-5. **Run the consumer script for RabbitMQ:**
+2. **Start Redis:**
 
     ```bash
-    python consumer.py
+    # Example command, adjust as needed
+    redis-server
     ```
 
-...
+3. **Run the application:**
+
+    ```bash
+    python main.py
+    ```
 
 ## Additional Features (Optional)
 
